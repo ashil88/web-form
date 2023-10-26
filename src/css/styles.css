@@ -1,7 +1,77 @@
+/* CSS HEX */
+/* --gunmetal: #292f36;
+--robin-egg-blue: #4ecdc4;
+--mint-cream: #f7fff7;
+--light-red: #ff6b6b;
+--naples-yellow: #ffe66d; */
+
 html {
-    font-family: sans-serif;
+    background: #f7fff7;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #444;
+}
+
+.theme--gunmetal {
+    background-color: #292f36;
+    color: #fff;
+}
+
+.hero::after,
+.hero::before {
+    content: "";
+    display: table;
+}
+
+.container {
+    margin: 80px auto 60px;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.max-6 {
+    width: 50%;
+}
+
+.m-form-row {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100%;
 }
 
 .form-label {
     display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    border: 1px solid #46515D;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.m-form__input--error .form-input {
+    border-color: #ff6b6b;
+}
+
+.m-form-row__error-message {
+    color: #ff6b6b;
+}
+
+.m-form__submit {
+    background: #FFDD33;
+    border: 1px solid #FFDD33;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 15px 30px;
+    transition: background-color .35s, border-color .35s;
+}
+
+.m-form__submit:hover {
+    background-color: #4ecdc4;
+    border-color: #4ecdc4;
+    cursor: pointer;
 }
