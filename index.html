@@ -90,7 +90,7 @@
         </section>
 
         <script type="text/x-nunjucks-template" id="details-card-template">
-            <div class="card theme--dutch-white">
+            <div id="submittedData{{submittedDataIndex}}" class="card theme--paynes-gray" data-index="{{submittedDataIndex}}">
                 <div class="card__content">
                     <dl class="details-list">
                         <div class="details-list-item">
@@ -116,6 +116,8 @@
                             <dd class="details-list-item__data">{{phone}}</dd>
                         </div>
                     </dl>
+
+                    <button type="button" class="delete-details-button">Delete entry</button>
                 </div>
             </div>
         </script>

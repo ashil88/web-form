@@ -9,6 +9,7 @@ require([
         constructor() {
             this.defaults = {
                 selectors: {
+                    deleteButton: '.delete-details-button',
                     detailsCardTemplate: 'script[type="text/x-nunjucks-template"]',
                     detailsWrapper: '.details-wrapper',
                     errorMessage: '.m-form-row__error-message',
@@ -33,6 +34,7 @@ require([
             this.form = this.el.querySelector('.web-form');
             this.inputElements = this.el.querySelectorAll(this.selectors.inputElement);
             this.submitButton = this.el.querySelector('button[type="submit"]');
+            this.submittedData = [];
         }
     
         init() {
@@ -129,10 +131,23 @@ require([
             if (isValid) {
                 const formData = new FormData(this.form),
                 entriesObj = Object.fromEntries(formData.entries());
+
+                this.submittedData.push(entriesObj);
+
+                const submittedDataIndex = this.submittedData.length - 1;
+
+                entriesObj.submittedDataIndex = submittedDataIndex;
     
                 this.detailsCardTemplate.render(entriesObj, (err, html) => {
                     this.detailsWrapper.classList.remove(this.classes.detailsWrapperHidden);
                     this.detailsWrapper.insertAdjacentHTML('beforeend', html);
+
+                    const submittedDataCard = document.querySelector(`#submittedData${submittedDataIndex}`),
+                        deleteBtn = submittedDataCard.querySelector(this.selectors.deleteButton);
+
+                    deleteBtn.addEventListener('click', () => {
+                        submittedDataCard.remove();
+                    });
                 });
             }
         }

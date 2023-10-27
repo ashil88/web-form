@@ -26,6 +26,11 @@ html {
     background-color: #e8dab2;
 }
 
+.theme--paynes-gray {
+    background-color: #4f6d7a;
+    color: #fff;
+}
+
 .hero::after,
 .hero::before {
     content: "";
@@ -126,7 +131,7 @@ html {
 }
 
 .details-list-item::after {
-    border-bottom: 1px solid #4f6d7a;
+    border-bottom: 1px solid #c0d6df;
     bottom: 0;
     content: "";
     left: 0;
