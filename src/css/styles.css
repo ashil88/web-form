@@ -1,20 +1,29 @@
 /* CSS HEX */
-/* --gunmetal: #292f36;
---robin-egg-blue: #4ecdc4;
---mint-cream: #f7fff7;
---light-red: #ff6b6b;
---naples-yellow: #ffe66d; */
+/* --burnt-sienna: #dd6e42;
+--dutch-white: #e8dab2;
+--paynes-gray: #4f6d7a;
+--columbia-blue: #c0d6df;
+--platinum: #eaeaea; */
 
 html {
-    background: #f7fff7;
+    background: #eaeaea;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #444;
 }
 
+.heading--2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
 .theme--gunmetal {
     background-color: #292f36;
     color: #fff;
+}
+
+.theme--dutch-white {
+    background-color: #e8dab2;
 }
 
 .hero::after,
@@ -29,8 +38,37 @@ html {
     width: 100%;
 }
 
-.max-6 {
-    width: 50%;
+.columns {
+    align-items: stretch;
+    direction: ltr;
+    display: grid;
+    grid-auto-flow: row;
+    overflow: visible;
+    padding: 0;
+    width: auto;
+}
+
+.columns--66-33 {
+    gap: 30px;
+    grid-template-columns: minmax(0,2fr) minmax(0,1fr);
+}
+
+.columns__column {
+    overflow: visible;
+    width: auto;
+}
+
+.card {
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.card__content {
+    padding: 15px 20px;
+}
+
+.max--form {
+    width: 75%;
 }
 
 .m-form-row {
@@ -62,8 +100,8 @@ html {
 }
 
 .m-form__submit {
-    background: #FFDD33;
-    border: 1px solid #FFDD33;
+    background: #dd6e42;
+    border: 1px solid #dd6e42;
     border-radius: 5px;
     font-weight: 700;
     padding: 15px 30px;
@@ -74,4 +112,37 @@ html {
     background-color: #4ecdc4;
     border-color: #4ecdc4;
     cursor: pointer;
+}
+
+.details-wrapper--hidden {
+    display: none;
+}
+
+
+.details-list-item {
+    display: flex;
+    padding: 10px;
+    position: relative;
+}
+
+.details-list-item::after {
+    border-bottom: 1px solid #4f6d7a;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.details-list-item:first-child {
+    padding-top: 0;
+}
+
+.details-list-item:last-child::after {
+    border-bottom: none;
+}
+
+.details-list-item__title {
+    font-weight: 700;
+    width: 40%;
 }
