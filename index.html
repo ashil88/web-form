@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="hero theme--gunmetal">
+        <div class="hero theme--amaranth-purple">
             <div class="container">
                 <h1>Web form test</h1>
             </div>
@@ -21,68 +21,69 @@
             <div class="container">
                 <div class="columns columns--66-33">
                     <div class="columns__column">
-                        <h2 class="heading--2">Fill in this form with your details</h2>
-
-                        <div class="m-form max--form">
-                            <form class="web-form" action="" method="post">
-                                <div class="m-form-row m-form__input"
-                                    data-is-mandatory="true"
-                                    data-error-mandatory-message="Please enter your first name">
-                                    <label class="form-label" for="firstname">First name</label>
-                                    <div class="m-form-row__content">
-                                        <p class="m-form-row__error-message m-form-row__error-message--hidden" id="firstname-error-message" role="alert"></p>
-                                        <input class="form-input" type="text" name="firstname" id="firstname" aria-required="true" autocomplete="given-name" />
+                        <div class="form-wrapper">
+                            <h2 class="heading--2">Fill in this form with your details</h2>
+                            <div class="m-form max--form">
+                                <form class="web-form" action="" method="post">
+                                    <div class="m-form-row m-form__input"
+                                        data-is-mandatory="true"
+                                        data-error-mandatory-message="Please enter your first name">
+                                        <label class="form-label" for="firstname">First name</label>
+                                        <div class="m-form-row__content">
+                                            <p class="m-form-row__error-message m-form-row__error-message--hidden" id="firstname-error-message" role="alert"></p>
+                                            <input class="form-input" type="text" name="firstname" id="firstname" aria-required="true" autocomplete="given-name" />
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="m-form-row m-form__input"
-                                    data-is-mandatory="true"
-                                    data-error-mandatory-message="Please enter your last name">
-                                    <label class="form-label" for="lastname">Last name</label>
-                                    <div class="m-form-row__content">
-                                        <p class="m-form-row__error-message m-form-row__error-message--hidden" id="lastname-error-message" role="alert"></p>
-                                        <input class="form-input" type="text" name="lastname" id="lastname" aria-required="true" autocomplete="family-name" />
+                    
+                                    <div class="m-form-row m-form__input"
+                                        data-is-mandatory="true"
+                                        data-error-mandatory-message="Please enter your last name">
+                                        <label class="form-label" for="lastname">Last name</label>
+                                        <div class="m-form-row__content">
+                                            <p class="m-form-row__error-message m-form-row__error-message--hidden" id="lastname-error-message" role="alert"></p>
+                                            <input class="form-input" type="text" name="lastname" id="lastname" aria-required="true" autocomplete="family-name" />
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="m-form-row m-form__input"
-                                    data-format-validation-type="email"
-                                    data-error-invalid-message="Please enter a valid email address">
-                                    <label class="form-label" for="email">Email</label>
-                                    <div class="m-form-row__content">
-                                        <p class="m-form-row__error-message m-form-row__error-message--hidden" id="email-error-message" role="alert"></p>
-                                        <input class="form-input" type="text" name="email" id="email" autocomplete="email" />
+                    
+                                    <div class="m-form-row m-form__input"
+                                        data-format-validation-type="email"
+                                        data-error-invalid-message="Please enter a valid email address">
+                                        <label class="form-label" for="email">Email</label>
+                                        <div class="m-form-row__content">
+                                            <p class="m-form-row__error-message m-form-row__error-message--hidden" id="email-error-message" role="alert"></p>
+                                            <input class="form-input" type="text" name="email" id="email" autocomplete="email" />
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="m-form-row m-form__input"
-                                    data-is-mandatory="true"
-                                    data-error-mandatory-message="Please enter your date of birth">
-                                    <label class="form-label" for="dob">Date of birth</label>
-                                    <div class="m-form-row__content">
-                                        <p class="m-form-row__error-message m-form-row__error-message--hidden" id="dob-error-message" role="alert"></p>
-                                        <input class="form-input" type="text" name="dob" id="dob" aria-required="true" autocomplete="bday" />
+                    
+                                    <div class="m-form-row m-form__input"
+                                        data-is-mandatory="true"
+                                        data-error-mandatory-message="Please enter your date of birth">
+                                        <label class="form-label" for="dob">Date of birth</label>
+                                        <div class="m-form-row__content">
+                                            <p class="m-form-row__error-message m-form-row__error-message--hidden" id="dob-error-message" role="alert"></p>
+                                            <input class="form-input" type="text" name="dob" id="dob" aria-required="true" autocomplete="bday" />
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <div class="m-form-row m-form__input"
-                                    data-is-mandatory="true"
-                                    data-error-mandatory-message="Please enter your phone number">
-                                    <label class="form-label" for="phone">Phone number</label>
-                                    <div class="m-form-row__content">
-                                        <p class="m-form-row__error-message m-form-row__error-message--hidden" id="phone-error-message" role="alert"></p>
-                                        <input class="form-input" type="text" name="phone" id="phone" aria-required="true" autocomplete="mobile" />
+                    
+                                    <div class="m-form-row m-form__input"
+                                        data-is-mandatory="true"
+                                        data-format-validation-type="phone"
+                                        data-error-mandatory-message="Please enter your phone number"
+                                        data-error-invalid-message="Please enter a valid UK phone number">
+                                        <label class="form-label" for="phone">Phone number</label>
+                                        <div class="m-form-row__content">
+                                            <p class="m-form-row__error-message m-form-row__error-message--hidden" id="phone-error-message" role="alert"></p>
+                                            <input class="form-input" type="text" name="phone" id="phone" aria-required="true" autocomplete="mobile" />
+                                        </div>
                                     </div>
-                                </div>
-                
-                                <button class="m-form__submit" type="submit">Submit</button>
-                            </form>
+                    
+                                    <button class="m-form__submit" type="submit">Submit</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="columns__column">
                         <div class="details-wrapper details-wrapper--hidden">
-                            <h3 class="heading--2">Submitted details</h3>
-
                         </div>
                     </div>
                 </div>
@@ -90,8 +91,10 @@
         </section>
 
         <script type="text/x-nunjucks-template" id="details-card-template">
-            <div id="submittedData{{submittedDataIndex}}" class="card theme--paynes-gray" data-index="{{submittedDataIndex}}">
+            <div id="submittedData{{submittedDataIndex}}" class="card theme--butterscotch" data-index="{{submittedDataIndex}}">
                 <div class="card__content">
+                    <h4 class="heading--4">Submitted details #{{submittedDataIndex}}</h4>
+
                     <dl class="details-list">
                         <div class="details-list-item">
                             <dt class="details-list-item__title">First name:</dt>

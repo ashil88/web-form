@@ -22,7 +22,8 @@ require([
                     inputError: 'm-form__input--error'
                 },
                 validationTypesRegex: {
-                    email: /\S+@\S+\.\S+/
+                    email: /\S+@\S+\.\S+/,
+                    phone: new RegExp('^\\+?(?:\\d\\s?){10,12}$')
                 }
             };
     
@@ -148,6 +149,8 @@ require([
                     deleteBtn.addEventListener('click', () => {
                         submittedDataCard.remove();
                     });
+
+                    location.href = `#submittedData${submittedDataIndex}`;
                 });
             }
         }
