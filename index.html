@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <div class="hero theme--amaranth-purple">
+        <div class="hero theme--alloy-orange">
             <div class="container">
                 <h1>Web form test</h1>
             </div>
@@ -57,7 +57,9 @@
                     
                                     <div class="m-form-row m-form__input"
                                         data-is-mandatory="true"
-                                        data-error-mandatory-message="Please enter your date of birth">
+                                        data-format-validation-type="dob"
+                                        data-error-mandatory-message="Please enter your date of birth"
+                                        data-error-invalid-message="Please enter a date in the correct format">
                                         <label class="form-label" for="dob">Date of birth</label>
                                         <div class="m-form-row__content">
                                             <p class="m-form-row__error-message m-form-row__error-message--hidden" id="dob-error-message" role="alert"></p>
@@ -90,10 +92,14 @@
             </div>
         </section>
 
+        <footer class="theme--butterscotch">
+            <h6>Placeholder footer</h6>
+        </footer>
+
         <script type="text/x-nunjucks-template" id="details-card-template">
-            <div id="submittedData{{submittedDataIndex}}" class="card theme--butterscotch" data-index="{{submittedDataIndex}}">
+            <div id="submittedData{{submittedDataIndex}}" class="card theme--charcoal" data-index="{{submittedDataIndex}}">
                 <div class="card__content">
-                    <h4 class="heading--4">Submitted details #{{submittedDataIndex}}</h4>
+                    <h4 class="heading--4">Submitted details #{{submittedDataIndex + 1}}</h4>
 
                     <dl class="details-list">
                         <div class="details-list-item">

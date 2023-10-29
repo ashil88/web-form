@@ -22,6 +22,7 @@ require([
                     inputError: 'm-form__input--error'
                 },
                 validationTypesRegex: {
+                    dob: /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                     email: /\S+@\S+\.\S+/,
                     phone: new RegExp('^\\+?(?:\\d\\s?){10,12}$')
                 }
@@ -51,11 +52,26 @@ require([
         submitForm(e) {
             e.preventDefault();
     
-            // TODO: reset form inputs
+            this.resetInputStates();
     
             const isValid = this.isFormValidated();
     
             this.validateAndSubmit(isValid);
+        }
+
+        resetInputStates() {
+            this.inputElements.forEach((input) => {
+                const element = input.querySelector('input'),
+                    errorElement = element.closest(this.selectors.inputElement)
+                                        .querySelector(this.selectors.errorMessage);
+
+                errorElement.classList.replace(this.classes.errorMessageVisible, this.classes.errorMessageHidden);
+
+                element.removeAttribute('aria-invalid');
+                element.removeAttribute('aria-describedby');
+
+                this.addClassToInputElement(element, this.classes.inputError, true);
+            });
         }
     
         isFormValidated() {
@@ -122,10 +138,14 @@ require([
             errorElement.innerHTML = errorMessage;
         }
     
-        addClassToInputElement(element, className) {
+        addClassToInputElement(element, className, reverse) {
             const parentEl = element.closest(this.selectors.inputElement);
     
-            parentEl.classList.add(className);
+            if (reverse) {
+                parentEl.classList.remove(className);
+            } else {
+                parentEl.classList.add(className);
+            }
         }
     
         validateAndSubmit(isValid) {
@@ -151,6 +171,8 @@ require([
                     });
 
                     location.href = `#submittedData${submittedDataIndex}`;
+
+                    this.form.reset();
                 });
             }
         }

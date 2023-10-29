@@ -6,19 +6,6 @@
 --charcoal: #273e47ff;
 --yinmn-blue: #4a5899ff; */
 
-/* CSS HEX */
-/* --burnt-sienna: #dd6e42;
---dutch-white: #e8dab2;
---paynes-gray: #4f6d7a;
---columbia-blue: #c0d6df;
---platinum: #eaeaea; */
-
-/* --plum: #88498fff;
---moonstone: #779fa1ff;
---dun: #e0cba8ff;
---tomato: #ff6542ff;
---eggplant: #564154ff; */
-
 html {
     background: #EFEFEF;
     font-family: 'Roboto', sans-serif;
@@ -30,12 +17,17 @@ html, html * {
     scroll-behavior: smooth;
 }
 
+footer {
+    display: flow-root;
+}
+
 .heading--2 {
     font-size: 24px;
     margin-bottom: 15px;
 }
 
 .heading--4 {
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -51,8 +43,17 @@ button {
     color: #FFF;
 }
 
+.theme--alloy-orange {
+    background-color: #BD632F;
+}
+
 .theme--butterscotch {
-    background-color: #D8973C;
+    background-color: #F4EfE2;
+}
+
+.theme--charcoal {
+    background-color: #273e47;
+    color: #FFF;
 }
 
 .hero::after,
@@ -120,11 +121,15 @@ button {
 }
 
 .m-form__input--error .form-input {
-    border-color: #ff6b6b;
+    border-color: #A4243B;
 }
 
 .m-form-row__error-message {
-    color: #ff6b6b;
+    color: #A4243B;
+}
+
+.m-form-row__error-message--hidden {
+    display: none;
 }
 
 .m-form__submit {
@@ -154,7 +159,7 @@ button {
 }
 
 .details-list-item::after {
-    border-bottom: 1px solid rgba(39, 62, 71, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     bottom: 0;
     content: "";
     left: 0;
@@ -172,12 +177,13 @@ button {
 
 .details-list-item__title {
     font-weight: 700;
-    width: 40%;
+    padding-right: 10px;
+    width: 45%;
 }
 
 .delete-details-button {
     border-bottom: 1px dotted;
-    color: #273E47;
+    color: #D8C99B;
     font-weight: 700;
     padding-bottom: 5px;
 }
@@ -192,7 +198,7 @@ button {
     }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 992px) {
     .container {
         margin: 80px auto 60px;
         max-width: 1280px;
