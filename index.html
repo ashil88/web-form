@@ -66,9 +66,12 @@
                                         data-error-mandatory-message="Please enter your date of birth"
                                         data-error-invalid-message="Please enter a date in the correct format">
                                         <label class="form-label" for="dob">Date of birth</label>
+                                        <div class="m-form-row__explanatory" id="dob-exp">
+                                            <p>e.g 12/05/1989</p>
+                                        </div>
                                         <div class="m-form-row__content">
                                             <p class="m-form-row__error-message m-form-row__error-message--hidden" id="dob-error-message" role="alert"></p>
-                                            <input class="form-input" type="text" name="dob" id="dob" aria-required="true" autocomplete="bday" />
+                                            <input class="form-input" type="text" name="dob" id="dob" aria-required="true" autocomplete="bday" aria-describedby="dob-exp" />
                                         </div>
                                     </div>
                     

@@ -13,6 +13,7 @@ require([
                     detailsCardTemplate: 'script[type="text/x-nunjucks-template"]',
                     detailsWrapper: '.details-wrapper',
                     errorMessage: '.m-form-row__error-message',
+                    explantoryText: '.m-form-row__explanatory',
                     inputElement: '.m-form__input'
                 },
                 classes: {
@@ -62,13 +63,18 @@ require([
         resetInputStates() {
             this.inputElements.forEach((input) => {
                 const element = input.querySelector('input'),
-                    errorElement = element.closest(this.selectors.inputElement)
-                                        .querySelector(this.selectors.errorMessage);
+                    errorElement = input.querySelector(this.selectors.errorMessage),
+                    explantoryText = input.querySelector(this.selectors.explantoryText);
 
                 errorElement.classList.replace(this.classes.errorMessageVisible, this.classes.errorMessageHidden);
 
                 element.removeAttribute('aria-invalid');
-                element.removeAttribute('aria-describedby');
+
+                if (explantoryText) {
+                    element.setAttribute('aria-describedby', explantoryText.id);
+                } else {
+                    element.removeAttribute('aria-describedby');
+                }
 
                 this.addClassToInputElement(element, this.classes.inputError, true);
             });
@@ -171,6 +177,8 @@ require([
                     });
 
                     location.href = `#submittedData${submittedDataIndex}`;
+
+                    submittedDataCard.setAttribute('role', 'alert');
 
                     this.form.reset();
                 });
